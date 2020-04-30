@@ -12,7 +12,8 @@
     "@hint/utils-fs": "^1.0.1",
     "@hint/utils-json": "^1.0.3",
     "@hint/utils-network": "^1.0.2",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/node": "^12.12.14",
@@ -70,7 +71,10 @@
     "watch": "npm run build && npm-run-all --parallel -c watch:*",
     "watch:assets": "npm run build:assets -- -w --no-initial",
     "watch:test": "ava --watch",
-    "watch:ts": "npm run build:ts -- --watch"
+    "watch:ts": "npm run build:ts -- --watch",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
-  "version": "2.1.18"
+  "version": "2.1.18",
+  "snyk": true
 }
