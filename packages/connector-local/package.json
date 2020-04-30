@@ -15,7 +15,8 @@
     "@hint/utils-network": "^1.0.2",
     "chokidar": "^3.3.1",
     "globby": "^11.0.0",
-    "jsdom": "^16.2.0"
+    "jsdom": "^16.2.0",
+    "snyk": "^1.316.1"
   },
   "description": "hint local connector",
   "devDependencies": {
@@ -78,7 +79,10 @@
     "test-release": "npm run i18n && npm run lint && npm run build-release && ava",
     "watch": "npm run build && npm-run-all --parallel -c watch:*",
     "watch:test": "ava --watch",
-    "watch:ts": "npm run build:ts -- --watch"
+    "watch:ts": "npm run build:ts -- --watch",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
-  "version": "3.2.3"
+  "version": "3.2.3",
+  "snyk": true
 }
