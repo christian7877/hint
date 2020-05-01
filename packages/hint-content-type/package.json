@@ -14,7 +14,8 @@
     "@hint/utils-network": "^1.0.2",
     "@hint/utils-string": "^1.0.1",
     "content-type": "^1.0.4",
-    "@hint/utils-types": "^1.0.1"
+    "@hint/utils-types": "^1.0.1",
+    "snyk": "^1.316.1"
   },
   "description": "hint for media types (f.k.a. MIME types) related best practices",
   "devDependencies": {
@@ -76,7 +77,10 @@
     "watch": "npm run build && npm-run-all --parallel -c watch:*",
     "watch:assets": "npm run build:assets -- -w --no-initial",
     "watch:test": "ava --watch",
-    "watch:ts": "npm run build:ts -- --watch"
+    "watch:ts": "npm run build:ts -- --watch",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
-  "version": "4.2.2"
+  "version": "4.2.2",
+  "snyk": true
 }
