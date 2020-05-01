@@ -12,7 +12,8 @@
     "@hint/utils": "^7.0.2",
     "@hint/utils-string": "^1.0.1",
     "postcss": "^7.0.27",
-    "postcss-safe-parser": "^4.0.1"
+    "postcss-safe-parser": "^4.0.1",
+    "snyk": "^1.316.1"
   },
   "description": "webhint parser needed to analyze CSS files",
   "devDependencies": {
@@ -74,7 +75,10 @@
     "watch": "npm run build && npm-run-all --parallel -c watch:*",
     "watch:assets": "npm run build:assets -- -w --no-initial",
     "watch:test": "ava --watch",
-    "watch:ts": "npm run build:ts -- --watch"
+    "watch:ts": "npm run build:ts -- --watch",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
-  "version": "3.0.17"
+  "version": "3.0.17",
+  "snyk": true
 }
